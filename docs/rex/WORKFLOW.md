@@ -32,6 +32,8 @@ These are responsibilities, not fixed permissions. The execution owner is chosen
 | `experiments/README.md` | Work index and queue of Experiments ready to run |
 | `experiments/EXP-xxx_name/` | Instructions, configuration, execution, progress, and results for one Experiment |
 
+Write the contents of documents under `research/` and `experiments/` in Japanese. Preserve code, commands, paths, identifiers, proper nouns, and quoted source text in their original form when translation would reduce accuracy.
+
 Avoid copying the same information into multiple places. Link to its source of truth instead.
 
 ## 3. Research cycle

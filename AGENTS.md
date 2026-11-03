@@ -80,6 +80,11 @@ Implementation rules
 * Do not delete, overwrite, revert, or reformat unrelated work.
 * Avoid unrelated refactoring.
 * Follow existing repository conventions.
+* Put external repositories that must remain unchanged under third_party/ as Git submodules.
+* Put external repositories that will be modified and committed under workspaces/.
+* Treat each repository under workspaces/ as an independent Git repository. Create its branches and commits there, not in the rexkit repository.
+* Do not modify repositories under third_party/. If changes become necessary, use a repository under workspaces/ instead.
+* Record the source URL and commit SHA of external repositories used by an Experiment.
 * Prefer adapters, wrappers, configuration, or inheritance over modifying upstream code.
 * Record the reason when third-party or upstream code must be changed.
 * Do not hard-code credentials, private data, machine-specific paths, or resource identifiers.
@@ -119,6 +124,8 @@ By default, prepare long-running work so a human can review and launch it.
 
 Research records
 
+* Write documents under research/ and experiments/ in Japanese so research discussion and records share one language.
+* Keep code, commands, paths, identifiers, proper nouns, and quoted source text in their original form when translation would reduce accuracy.
 * Keep research questions, hypotheses, and interpretations under research/.
 * Keep work instructions, configurations, execution records, and results under experiments/.
 * Link related Research Questions and Experiments.

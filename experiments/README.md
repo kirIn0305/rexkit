@@ -1,56 +1,56 @@
-# Experiment Queue
+# Experiment キュー
 
-This page lists all recorded work, including research experiments, environment setup, investigations, implementations, and bug fixes.
+このページには、研究実験、環境構築、調査、実装、バグ修正を含む、記録されたすべての作業を一覧化する。
 
-Each Experiment's README contains its instructions, progress, execution details, and results. See [the workflow](../docs/WORKFLOW.md) for how Experiments are created and managed.
+各 Experiment の README には、作業指示、進捗、実行詳細、結果を記録する。Experiment の作成と管理方法は[ワークフロー](../docs/WORKFLOW.md)を参照する。
 
-Creating an Experiment is optional. Ask the user before recording work as a new or existing Experiment unless they have already specified their choice.
+Experiment の作成は任意とする。ユーザーがすでに選択している場合を除き、新規または既存の Experiment に作業を記録する前に確認する。
 
-## Ready
+## Ready（実行・レビュー待ち）
 
-Prepared for the next actor to review or execute. `ready` does not mean that a restricted operation has been approved.
+次の担当者がレビューまたは実行できる状態。`ready` は制限対象の操作が承認済みであることを意味しない。
 
-| Priority | ID | Next action | Owner | Resources | Command or link |
+| 優先度 | ID | 次のアクション | 担当 | リソース | コマンドまたはリンク |
 |---:|---|---|---|---|---|
-| 1 | [EXP-001](EXP-001_short-name/README.md) | Review and run | human | TBD | `bash experiments/EXP-001_short-name/run.sh` |
+| 1 | [EXP-001](EXP-001_short-name/README.md) | レビューして実行 | human | TBD | `bash experiments/EXP-001_short-name/run.sh` |
 
-<!-- Remove the example row when using this template. -->
+<!-- このテンプレートを使用するときは例の行を削除する。 -->
 
-## In progress
+## 進行中
 
-| ID | Work | Owner | Current state | Next action |
+| ID | 作業 | 担当 | 現在の状態 | 次のアクション |
 |---|---|---|---|---|
 | — | — | — | — | — |
 
-## Planned
+## 計画済み
 
-| Priority | ID | Work | Related RQ | Next action |
+| 優先度 | ID | 作業 | 関連 RQ | 次のアクション |
 |---:|---|---|---|---|
 | — | — | — | — | — |
 
-## Blocked
+## ブロック中
 
-| ID | Work | Blocker | Needed to resume |
+| ID | 作業 | ブロッカー | 再開に必要なもの |
 |---|---|---|---|
 | — | — | — | — |
 
-## Completed
+## 完了
 
-| ID | Work | Outcome | Result |
+| ID | 作業 | 成果 | 結果 |
 |---|---|---|---|
 | — | — | — | — |
 
-## Cancelled
+## 中止
 
-| ID | Work | Reason |
+| ID | 作業 | 理由 |
 |---|---|---|
 | — | — | — |
 
-## Maintenance
+## メンテナンス
 
-- Assign the next unused `EXP-xxx` ID when creating an Experiment.
-- Keep each Experiment in exactly one status section.
-- Update this page when an Experiment's status or next action changes.
-- Put detailed instructions, commands, logs, and measured values in the Experiment README; keep this page brief.
-- For work that requires a run, identify the execution owner as `agent`, `human`, or `hybrid` in the Experiment README.
-- Do not treat a command listed here as authorization to execute it. Check `AGENTS.md` and the Experiment README before running restricted operations.
+- Experiment を作成するときは、次の未使用 `EXP-xxx` ID を割り当てる。
+- 各 Experiment は必ず1つのステータスセクションだけに配置する。
+- Experiment のステータスまたは次のアクションが変わったら、このページを更新する。
+- 詳細な指示、コマンド、ログ、測定値は Experiment README に記録し、このページは簡潔に保つ。
+- 実行を伴う作業では、Experiment README に実行担当を `agent`、`human`、`hybrid` のいずれかで記載する。
+- ここに記載されたコマンドを実行承認とみなさない。制限対象の操作を実行する前に `AGENTS.md` と Experiment README を確認する。

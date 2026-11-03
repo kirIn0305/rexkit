@@ -1,63 +1,60 @@
-# Research Overview
+# 研究概要
 
-This directory records the research questions, current understanding, and major changes in research direction.
+このディレクトリには、研究課題、現時点の理解、研究方針の主要な変更を記録する。
 
-The documents here describe our current interpretation, not unquestionable facts. Check important claims against the linked Experiments and observed results.
+ここに記載する内容は現時点の解釈であり、確定した事実とは限らない。重要な主張は、リンクされた Experiment と観測結果に照らして確認する。
 
-## Objective
+## 目的
 
-<!-- Replace with the goal of this research project. -->
+<!-- この研究プロジェクトの目標に置き換える。 -->
 
 TBD
 
-## Research Questions
+## 研究課題
 
-| ID | Question | Status | Document |
+| ID | 課題 | ステータス | 文書 |
 |---|---|---|---|
 | RQ-001 | TBD | active | [RQ-001](RQ-001_short-name.md) |
 
-<!-- Add a row when a new RQ is defined. Keep the detailed hypotheses
-and evidence in each RQ file. -->
+<!-- 新しい RQ を定義したら行を追加する。詳細な仮説と根拠は各 RQ ファイルに記録する。 -->
 
-## Current understanding
+## 現時点の理解
 
-<!-- Briefly summarize what currently matters across RQs.
-Distinguish observations from interpretations and link to evidence. -->
+<!-- RQ を横断して重要な内容を簡潔にまとめる。観測と解釈を区別し、根拠へリンクする。 -->
 
-- **Observed:** TBD. See [EXP-XXX](../experiments/EXP-XXX_short-name/README.md).
-- **Interpretation:** TBD.
-- **Open question:** TBD.
+- **観測:** TBD。[EXP-XXX](../experiments/EXP-XXX_short-name/README.md)を参照。
+- **解釈:** TBD。
+- **未解決の課題:** TBD。
 
-## Current priorities
+## 現在の優先事項
 
-<!-- List only the main research decisions or investigations ahead.
-The detailed work queue belongs in experiments/README.md. -->
+<!-- 今後の主要な研究判断または調査のみを記載する。詳細な作業キューは experiments/README.md に記録する。 -->
 
 1. TBD
 
-## Timeline
+## タイムライン
 
-Record events that changed the research question, hypothesis, interpretation, or overall direction. Routine implementation progress belongs in the relevant Experiment.
+研究課題、仮説、解釈、全体方針を変更した出来事を記録する。通常の実装進捗は該当する Experiment に記録する。
 
-### YYYY-MM-DD — Project started
+### YYYY-MM-DD - プロジェクト開始
 
-- Defined the initial objective and [RQ-001](RQ-001_short-name.md).
-- Reason for this direction: TBD.
+- 初期目標と [RQ-001](RQ-001_short-name.md) を定義した。
+- この方針を選んだ理由: TBD。
 
-<!-- Example of a later entry:
+<!-- 後続エントリの例:
 
-### YYYY-MM-DD — Hypothesis narrowed
+### YYYY-MM-DD - 仮説を限定
 
-- EXP-004 did not show the expected improvement in the overall metric.
-- We narrowed RQ-001 to the conditions described in its RQ document.
-- Evidence: [EXP-004](../experiments/EXP-004_short-name/README.md).
+- EXP-004 では全体指標に期待した改善が見られなかった。
+- RQ-001 を RQ 文書に記載した条件へ限定した。
+- 根拠: [EXP-004](../experiments/EXP-004_short-name/README.md)。
 -->
 
-## How to update this document
+## 更新方法
 
-- Add a new RQ to the table when it becomes a distinct research question.
-- Update “Current understanding” when evidence changes the cross-project picture.
-- Add a timeline entry only for a meaningful research decision or change.
-- Keep detailed hypotheses and their history in the relevant RQ file.
-- Keep experimental conditions and measured results in the relevant Experiment.
-- Preserve earlier timeline entries; do not rewrite the history to fit the latest hypothesis.
+- 独立した研究課題が生じたら、表に新しい RQ を追加する。
+- 根拠によってプロジェクト全体の見方が変わったら「現時点の理解」を更新する。
+- 意味のある研究判断または変更に限り、タイムラインへ追加する。
+- 詳細な仮説とその履歴は、該当する RQ ファイルに記録する。
+- 実験条件と測定結果は、該当する Experiment に記録する。
+- 過去のタイムライン項目を保持し、最新の仮説に合わせて履歴を書き換えない。

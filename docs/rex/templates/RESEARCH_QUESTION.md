@@ -1,81 +1,80 @@
-# RQ-XXX: Short question
+# RQ-XXX: 課題の短い名前
 
-Status: active
-Created: YYYY-MM-DD
+ステータス: active
+作成日: YYYY-MM-DD
 
 <!--
-Copy this template to research/RQ-XXX_short-name.md.
-Keep hypotheses and their history in this file until it becomes
-difficult to navigate. Link to Experiment results rather than
-duplicating their full contents.
+このテンプレートを research/RQ-XXX_short-name.md にコピーする。
+仮説とその履歴は、読みにくくなるまではこのファイルに記録する。
+Experiment の結果を重複して記載せず、結果へのリンクを張る。
 -->
 
-## Question
+## 研究課題
 
-State the research question clearly.
+研究課題を明確に記述する。
 
-## Motivation
+## 動機
 
-Why does this question matter? What is currently unknown?
+この課題が重要な理由と、現時点で不明な点を記述する。
 
-## Current hypotheses
+## 現在の仮説
 
-### H1: Short hypothesis name
+### H1: 仮説の短い名前
 
-State a testable hypothesis and the conditions under which it should hold.
+検証可能な仮説と、その仮説が成立すると考えられる条件を記述する。
 
-### H2: Short hypothesis name
+### H2: 仮説の短い名前
 
-Add another hypothesis only when it makes a distinct prediction.
+異なる予測を行う場合に限り、別の仮説を追加する。
 
-## Alternative explanations
+## 代替説明
 
-- What else could explain the same observation?
-- What confounding factors should be controlled?
+- 同じ観測を説明し得る他の要因は何か。
+- どの交絡要因を統制すべきか。
 
-## Evidence
+## 根拠
 
-| Experiment | Observation | Implication for this RQ |
+| Experiment | 観測 | この RQ への含意 |
 |---|---|---|
 | [EXP-XXX](../experiments/EXP-XXX_short-name/README.md) | TBD | TBD |
 
 <!--
-Describe what was observed separately from what it might mean.
-The Experiment README is the source for conditions and measurements.
+観測した内容と、その意味の解釈を分けて記述する。
+条件と測定値については Experiment README を正とする。
 -->
 
-## Current interpretation
+## 現在の解釈
 
-Summarize what the available evidence suggests.
+利用可能な根拠から示唆される内容をまとめる。
 
-State separately:
+以下を分けて記述する。
 
-- What is supported:
-- What remains uncertain:
-- What cannot be concluded yet:
+- 支持されていること:
+- 依然として不確かなこと:
+- 現時点では結論できないこと:
 
-## Next questions
+## 次の課題
 
-- What evidence would distinguish the remaining hypotheses?
-- Which result or condition needs closer investigation?
+- 残る仮説を識別するには、どのような根拠が必要か。
+- どの結果または条件を詳しく調査する必要があるか。
 
-## History
+## 履歴
 
 <!--
-Record meaningful changes to hypotheses or interpretation.
-Keep earlier entries even if a hypothesis is later rejected.
-Minor wording edits are already tracked by Git.
+仮説または解釈に対する意味のある変更を記録する。
+後に仮説が棄却された場合も、以前の項目を保持する。
+軽微な文言修正は Git で追跡されるため、ここには記録しない。
 -->
 
-### YYYY-MM-DD — RQ created
+### YYYY-MM-DD - RQ 作成
 
-- Initial question:
-- Initial hypotheses:
-- Reason for starting:
+- 初期の研究課題:
+- 初期仮説:
+- 開始理由:
 
-### YYYY-MM-DD — Interpretation updated
+### YYYY-MM-DD - 解釈更新
 
-- New evidence: [EXP-XXX](../experiments/EXP-XXX_short-name/README.md)
-- Previous interpretation:
-- Updated interpretation:
-- Reason for the change:
+- 新しい根拠: [EXP-XXX](../experiments/EXP-XXX_short-name/README.md)
+- 以前の解釈:
+- 更新後の解釈:
+- 変更理由:

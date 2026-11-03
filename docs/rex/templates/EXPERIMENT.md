@@ -1,189 +1,187 @@
-# EXP-XXX: Short title
+# EXP-XXX: 短いタイトル
 
-Status: planned
-Type: experiment
-Related RQ: N/A
-Execution owner: TBD
-Created: YYYY-MM-DD
+ステータス: planned
+種類: experiment
+関連 RQ: N/A
+実行担当: TBD
+作成日: YYYY-MM-DD
 
 <!--
-Copy this file to experiments/EXP-XXX_short-name/README.md.
-Use only the sections relevant to the work. Delete instructional comments.
-Use TBD for undecided items and N/A for items that do not apply.
-Do not claim that a test or experiment ran unless it actually ran.
+このファイルを experiments/EXP-XXX_short-name/README.md にコピーする。
+作業に関連するセクションだけを使用し、説明用コメントは削除する。
+未決定の項目には TBD、該当しない項目には N/A を使用する。
+実際に実行していないテストや実験を、実行済みとして記載しない。
 -->
 
-## User request
+## ユーザーの依頼
 
-> Preserve the user's original request here.
+> ユーザーの元の依頼をそのまま記載する。
 
-## Objective
+## 目的
 
-What will this Experiment establish or accomplish?
+この Experiment で明らかにすること、または達成することを記述する。
 
-## Background
+## 背景
 
-Why is this work needed now? Link to relevant RQs, earlier Experiments,
-issues, or source material. Distinguish established facts from assumptions.
+この作業が今必要な理由を記述する。関連する RQ、過去の Experiment、issue、
+資料へリンクし、確認済みの事実と仮定を区別する。
 
-## Hypothesis
+## 仮説
 
-<!-- For a research experiment. Omit for setup or routine implementation. -->
+<!-- 研究実験で使用する。環境構築や通常の実装では省略する。 -->
 
-State a testable hypothesis.
+検証可能な仮説を記述する。
 
-### Alternative explanations
+### 代替説明
 
-What else could explain the expected observation?
+予想される観測を説明し得る他の要因を記述する。
 
-## Method
+## 方法
 
-<!-- For a research experiment, specify the comparison clearly. -->
+<!-- 研究実験では比較条件を明確に記述する。 -->
 
-- Baseline:
-- Proposed condition:
-- Variable being changed:
-- Conditions held fixed:
-- Dataset or inputs:
-- Metrics and aggregation:
-- Seeds or repetitions:
+- ベースライン:
+- 提案条件:
+- 変更する変数:
+- 固定する条件:
+- データセットまたは入力:
+- 指標と集計方法:
+- シードまたは反復回数:
 
-### Expected outcomes
+### 期待する結果
 
-<!-- Write this before seeing the results. -->
+<!-- 結果を確認する前に記述する。 -->
 
-| Possible outcome | What it would suggest | What it would not establish |
+| 起こり得る結果 | 示唆されること | その結果だけでは確立できないこと |
 |---|---|---|
 | | | |
 
-## Work instructions
+## 作業指示
 
-Describe the work needed to prepare, implement, investigate, or execute
-this Experiment.
-
-- [ ]
-- [ ]
-
-### Constraints
-
-Record important limits, such as files that must not change, resource
-limits, data restrictions, and compatibility requirements.
-
-## Acceptance criteria
-
-Define observable criteria for completing the requested work.
+この Experiment の準備、実装、調査、実行に必要な作業を記述する。
 
 - [ ]
 - [ ]
 
-## Execution
+### 制約
 
-Execution owner: TBD
+変更してはならないファイル、リソース上限、データ制限、互換性要件など、
+重要な制約を記録する。
 
-<!-- Choose agent, human, or hybrid. For hybrid, define each person's or
-agent's responsibilities. Approval to create this Experiment does not
-automatically approve expensive or restricted execution. -->
+## 受け入れ基準
 
-### Preconditions
+依頼された作業の完了を判断できる、観測可能な基準を定義する。
 
-- Required environment:
-- Required data or checkpoints:
-- Required resources:
-- Estimated duration:
-- Output location:
-- Resume and overwrite behavior:
+- [ ]
+- [ ]
 
-### Commands
+## 実行
 
-<!-- Add only the commands actually needed. Use scripts when that makes
-execution easier to reproduce or hand off. -->
+実行担当: TBD
+
+<!-- agent、human、hybrid のいずれかを選ぶ。hybrid の場合は各担当者または
+エージェントの責任範囲を定義する。Experiment 作成の承認は、高コストまたは
+制限対象の実行を自動的に承認するものではない。 -->
+
+### 前提条件
+
+- 必要な環境:
+- 必要なデータまたはチェックポイント:
+- 必要なリソース:
+- 予想所要時間:
+- 出力先:
+- 再開および上書き時の動作:
+
+### コマンド
+
+<!-- 実際に必要なコマンドだけを追加する。再現や引き継ぎが容易になる場合は
+スクリプトを使用する。 -->
 
 ```bash
-# Preparation or preflight
+# 準備または事前確認
 ```
 
 ```bash
-# Main execution
+# 本実行
 ```
 
 ```bash
-# Evaluation or result collection
+# 評価または結果収集
 ```
 
-### Execution approval
+### 実行承認
 
-<!-- Record approval only when required by AGENTS.md. Do not infer it
-from approval to create this Experiment. -->
+<!-- AGENTS.md で必要とされる場合に限り承認を記録する。
+Experiment 作成の承認から実行承認を推測しない。 -->
 
-- Required: TBD
-- Status: TBD
-- Approved scope: TBD
+- 要否: TBD
+- ステータス: TBD
+- 承認された範囲: TBD
 
-## Work plan
+## 作業計画
 
-<!-- The implementing actor fills this in before making changes. -->
+<!-- 実装担当者が変更前に記入する。 -->
 
 TBD
 
-## Progress and decisions
+## 進捗と判断
 
-<!-- Add dated entries for meaningful progress, blockers, or changes
-to the agreed approach. Git history covers minor edits. -->
+<!-- 意味のある進捗、ブロッカー、合意したアプローチの変更を日付付きで記録する。
+軽微な編集は Git 履歴で追跡する。 -->
 
 ### YYYY-MM-DD
 
-Experiment created.
+Experiment を作成した。
 
-## Validation
+## 検証
 
-| Check or command | Result | Notes |
+| 確認項目またはコマンド | 結果 | 備考 |
 |---|---|---|
-| Not run | Pending | |
+| 未実行 | 保留 | |
 
-<!-- State why a relevant check could not be run. -->
+<!-- 必要な確認を実行できなかった場合は理由を記述する。 -->
 
-## Execution record
+## 実行記録
 
-<!-- Fill in when the main work starts. Omit if no separate run exists. -->
+<!-- 本実行を開始したら記入する。独立した実行がない場合は省略する。 -->
 
-- Start time:
-- End time:
+- 開始時刻:
+- 終了時刻:
 - Git commit:
-- Configuration:
-- Dataset or input version:
-- Seed:
-- Environment:
-- Process or job ID:
-- Log location:
-- Output or checkpoint location:
-- Exit status:
+- 設定:
+- データセットまたは入力のバージョン:
+- シード:
+- 環境:
+- プロセスまたはジョブ ID:
+- ログの場所:
+- 出力またはチェックポイントの場所:
+- 終了ステータス:
 
-## Results
+## 結果
 
-<!-- Record observations and measurements without overstating them.
-Link to large logs and artifacts rather than committing them to Git. -->
+<!-- 観測と測定値を過大解釈せずに記録する。
+大きなログや成果物は Git にコミットせず、リンクを記載する。 -->
 
 TBD
 
-## Interpretation
+## 解釈
 
-<!-- For research experiments, relate the observations back to the
-hypothesis and alternatives. Keep observations separate from inference.
-Omit for routine setup or documentation work. -->
+<!-- 研究実験では、観測を仮説および代替説明と関連付ける。
+観測と推論を分ける。通常の環境構築や文書作業では省略する。 -->
 
-- Supported:
-- Weakened or refuted:
-- Still unknown:
-- Confounding factors:
-- Recommended next step:
+- 支持されたこと:
+- 弱まった、または反証されたこと:
+- 依然として不明なこと:
+- 交絡要因:
+- 推奨する次のステップ:
 
-## Handoff
+## 引き継ぎ
 
-<!-- Keep this usable even if the agent's session ends unexpectedly. -->
+<!-- エージェントのセッションが予期せず終了しても利用できる状態を保つ。 -->
 
-- Current state:
-- Completed work:
-- Major files changed:
-- Known problems or unverified assumptions:
-- Next concrete action or command:
-- Branch and commit, if available:
+- 現在の状態:
+- 完了した作業:
+- 変更した主要ファイル:
+- 既知の問題または未検証の仮定:
+- 次の具体的なアクションまたはコマンド:
+- ブランチと commit（該当する場合）:
