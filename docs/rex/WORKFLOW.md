@@ -25,12 +25,14 @@ These are responsibilities, not fixed permissions. The execution owner is chosen
 |---|---|
 | `README.md` | Project overview and entry point |
 | `AGENTS.md` | Mandatory rules for AI agents |
-| `docs/WORKFLOW.md` | This workflow |
-| `docs/templates/EXPERIMENT.md` | Template for Experiment READMEs |
+| `docs/rex/WORKFLOW.md` | This workflow |
+| `docs/rex/templates/EXPERIMENT.md` | Template for Experiment overviews and research results |
+| `docs/rex/templates/TASK.md` | Template for Experiment requests, work instructions, execution, and handoff records |
 | `research/README.md` | Research goals, Research Question list, and overall timeline |
 | `research/RQ-xxx.md` | Hypotheses, evidence, interpretations, and open questions for each RQ |
 | `experiments/README.md` | Work index and queue of Experiments ready to run |
-| `experiments/EXP-xxx_name/` | Instructions, configuration, execution, progress, and results for one Experiment |
+| `experiments/EXP-xxx_name/README.md` | Objective, background, hypothesis, method, results, and interpretation for one Experiment |
+| `experiments/EXP-xxx_name/TASK.md` | User request, work instructions, acceptance criteria, execution, progress, validation, and handoff |
 
 Write the contents of documents under `research/` and `experiments/` in Japanese. Preserve code, commands, paths, identifiers, proper nouns, and quoted source text in their original form when translation would reduce accuracy.
 
@@ -84,13 +86,14 @@ Recommend recording the work as an Experiment when it spans multiple sessions, n
 When the user chooses to create a new Experiment, the agent:
 
 1. Checks existing IDs in `experiments/README.md`.
-2. Reads `docs/templates/EXPERIMENT.md`.
+2. Reads `docs/rex/templates/EXPERIMENT.md` and `docs/rex/templates/TASK.md`.
 3. Creates `experiments/EXP-xxx_short-name/` using the next available ID.
-4. Creates its `README.md` from the template.
-5. Preserves the original request under `User request`.
-6. Links the relevant RQ, if any.
-7. Adds the Experiment to `experiments/README.md`.
-8. Records a work plan before starting the work.
+4. Creates its `README.md` from the Experiment template.
+5. Creates its `TASK.md` from the Task template.
+6. Preserves the original request under `ユーザーの依頼` in `TASK.md`.
+7. Links the relevant RQ, if any, from `README.md`.
+8. Adds the Experiment to `experiments/README.md`.
+9. Records a work plan in `TASK.md` before starting the work.
 
 Use `TBD` for undecided information and `N/A` for sections that do not apply. Do not invent conditions or metrics that would materially affect the result.
 
@@ -113,11 +116,11 @@ If code and execution scripts are ready but the main run remains, mark the Exper
 
 ## 8. Implementation and preparation
 
-When assigning an Experiment to Claude Code or another coding agent, identify its README:
+When assigning an Experiment to Claude Code or another coding agent, identify its directory:
 
-> Read `AGENTS.md` and the target Experiment README. Confirm the objective, constraints, and acceptance criteria, then record a work plan. Implement the change, run relevant tests and a reduced-cost smoke test where possible, and record the results and remaining work.
+> Read `AGENTS.md` and the target Experiment's `README.md` and `TASK.md`. Confirm the objective, constraints, and acceptance criteria, then record a work plan in `TASK.md`. Implement the change, run relevant tests and a reduced-cost smoke test where possible, and record the results and remaining work.
 
-Before making changes, the assigned actor inspects the existing code and tests and limits the scope of the change. The Experiment README should record what changed, which checks ran, their results, and what remains unverified.
+Before making changes, the assigned actor inspects the existing code and tests and limits the scope of the change. The Experiment `TASK.md` should record what changed, which checks ran, their results, and what remains unverified.
 
 Distinguish short tests and smoke tests from a full, long-running execution.
 
@@ -132,7 +135,7 @@ Choose an execution mode for each Experiment:
 | `hybrid` | Human and agent divide execution, monitoring, or evaluation |
 | `TBD` | The execution owner has not been decided |
 
-Record at least the execution owner in the Experiment README:
+Record at least the execution owner in the Experiment `TASK.md`:
 
 ```markdown
 Execution owner: agent
@@ -173,11 +176,11 @@ If an unknown condition could change the result, resolve it before starting.
 
 ## 11. Execution and monitoring
 
-For `agent` execution, the agent runs the authorized command and records the start time, command, commit, job ID, and output location. If the agent's session may end before the job does, leave instructions for monitoring, resuming, and collecting results.
+For `agent` execution, the agent runs the authorized command and records the start time, command, commit, job ID, and output location in `TASK.md`. If the agent's session may end before the job does, leave instructions for monitoring, resuming, and collecting results there.
 
-For `human` execution, the Experiment provides a command the human can run directly. The human records the job ID and log location or provides them to the agent afterward.
+For `human` execution, `TASK.md` provides a command the human can run directly. The human records the job ID and log location there or provides them to the agent afterward.
 
-For `hybrid` execution, follow the responsibilities documented in the Experiment. Both “agent submits, human monitors” and “human runs training, agent evaluates and summarizes” are valid arrangements.
+For `hybrid` execution, follow the responsibilities documented in `TASK.md`. Both “agent submits, human monitors” and “human runs training, agent evaluates and summarizes” are valid arrangements.
 
 When an execution script is needed, make it runnable from the repository root where practical:
 
@@ -189,7 +192,7 @@ Add `submit.sh` when the environment requires a job scheduler.
 
 ## 12. Recording results
 
-Do not normally commit checkpoints or large logs to Git. Record enough information in the Experiment to reproduce and inspect the result:
+Do not normally commit checkpoints or large logs to Git. Record enough execution information in the Experiment `TASK.md` to reproduce and inspect the result:
 
 - Git commit
 - Configuration
@@ -201,7 +204,7 @@ Do not normally commit checkpoints or large logs to Git. Record enough informati
 - Metrics and aggregation method
 - Failures or interruptions
 
-The Experiment is the source of truth for measured values. In an RQ file, link to the Experiment and describe what its results mean for the hypothesis rather than copying extensive results.
+The Experiment `README.md` is the source of truth for measured values and their interpretation. In an RQ file, link to the Experiment and describe what its results mean for the hypothesis rather than copying extensive results.
 
 ## 13. Interpreting results
 
@@ -215,7 +218,7 @@ After human review, update the Experiment and the relevant RQ. Update the timeli
 
 ## 14. Interruption and handoff
 
-A person or agent taking over should locate the work in `experiments/README.md` and read the target Experiment README.
+A person or agent taking over should locate the work in `experiments/README.md` and read the target Experiment's `README.md` and `TASK.md`.
 
 Even when work stops midway, record:
 
@@ -237,7 +240,7 @@ The previous chat transcript should not be required to continue.
 
 ### Turn a discussion into an Experiment proposal
 
-> Turn this discussion into an Experiment proposal following `docs/templates/EXPERIMENT.md`. Show me the draft first. Do not save it yet.
+> Turn this discussion into an Experiment proposal following `docs/rex/templates/EXPERIMENT.md` and `docs/rex/templates/TASK.md`. Show me the draft first. Do not save it yet.
 
 ### Approve an Experiment
 
@@ -245,16 +248,16 @@ The previous chat transcript should not be required to continue.
 
 ### Request implementation
 
-> Read `AGENTS.md` and the target Experiment README. Implement the documented work and record validation results and remaining tasks in the Experiment.
+> Read `AGENTS.md` and the target Experiment's `README.md` and `TASK.md`. Implement the documented work and record validation results and remaining tasks in `TASK.md`.
 
 ### Ask an agent to execute
 
-> Check the target Experiment's configuration and command, then execute it within the approved scope. Record the job ID, logs, status, and results in the Experiment.
+> Read the target Experiment's `README.md` and `TASK.md`. Check the configuration and command, then execute within the approved scope. Record the job ID, logs, and status in `TASK.md`, and record measured results in `README.md`.
 
 ### Prepare an Experiment for human execution
 
-> Prepare the target Experiment so a human can run it. Provide scripts, configuration, pre-run checks, and an exact command. Do not launch it.
+> Read the target Experiment's `README.md` and `TASK.md`. Prepare it so a human can run it. Record scripts, configuration, pre-run checks, and an exact command in `TASK.md`. Do not launch it.
 
 ### Resume interrupted work
 
-> Read `AGENTS.md` and the target Experiment README. Summarize its current status, remaining work, and next action before continuing.
+> Read `AGENTS.md` and the target Experiment's `README.md` and `TASK.md`. Summarize its current status, remaining work, and next action before continuing.

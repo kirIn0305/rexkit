@@ -16,13 +16,14 @@ Required reading
 Before non-trivial repository work, read:
 
 1. README.md
-2. docs/WORKFLOW.md
+2. docs/rex/WORKFLOW.md
 3. experiments/README.md
 4. The relevant Research Question and Experiment files
 
 When creating an Experiment, also read:
 
-* docs/templates/EXPERIMENT.md
+* docs/rex/templates/EXPERIMENT.md
+* docs/rex/templates/TASK.md
 
 Read only the files relevant to the current request.
 
@@ -54,10 +55,11 @@ Creating an Experiment
 When the user approves a new Experiment:
 
 1. Determine the next available Experiment ID.
-2. Create its directory and README from docs/templates/EXPERIMENT.md.
-3. Preserve the original request under User request.
-4. Add it to experiments/README.md.
-5. Record the work plan before implementation.
+2. Create its directory and README.md from docs/rex/templates/EXPERIMENT.md.
+3. Create TASK.md in the same directory from docs/rex/templates/TASK.md.
+4. Preserve the original request under ユーザーの依頼 in TASK.md.
+5. Add the Experiment to experiments/README.md.
+6. Record the work plan in TASK.md before implementation.
 
 Do not require the user to fill in the template.
 
@@ -100,7 +102,7 @@ Run validation appropriate to the change, such as:
 * Regression tests
 * Small or reduced-cost smoke tests
 
-Record the executed commands, results, failures, and skipped checks in the relevant Experiment README.
+Record the executed commands, results, failures, and skipped checks in the relevant Experiment TASK.md.
 
 Never report an unexecuted check as successful. If validation cannot be run, state why and provide the exact command a human should execute.
 

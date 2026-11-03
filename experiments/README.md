@@ -2,7 +2,7 @@
 
 このページには、研究実験、環境構築、調査、実装、バグ修正を含む、記録されたすべての作業を一覧化する。
 
-各 Experiment の README には、作業指示、進捗、実行詳細、結果を記録する。Experiment の作成と管理方法は[ワークフロー](../docs/WORKFLOW.md)を参照する。
+各 Experiment の `README.md` には概要と研究結果を、`TASK.md` にはユーザーの依頼、作業指示、進捗、実行詳細、検証、引き継ぎを記録する。Experiment の作成と管理方法は[ワークフロー](../docs/rex/WORKFLOW.md)を参照する。
 
 Experiment の作成は任意とする。ユーザーがすでに選択している場合を除き、新規または既存の Experiment に作業を記録する前に確認する。
 
@@ -51,6 +51,6 @@ Experiment の作成は任意とする。ユーザーがすでに選択してい
 - Experiment を作成するときは、次の未使用 `EXP-xxx` ID を割り当てる。
 - 各 Experiment は必ず1つのステータスセクションだけに配置する。
 - Experiment のステータスまたは次のアクションが変わったら、このページを更新する。
-- 詳細な指示、コマンド、ログ、測定値は Experiment README に記録し、このページは簡潔に保つ。
-- 実行を伴う作業では、Experiment README に実行担当を `agent`、`human`、`hybrid` のいずれかで記載する。
-- ここに記載されたコマンドを実行承認とみなさない。制限対象の操作を実行する前に `AGENTS.md` と Experiment README を確認する。
+- 詳細な指示、コマンド、ログは Experiment の `TASK.md` に、測定値と解釈は `README.md` に記録し、このページは簡潔に保つ。
+- 実行を伴う作業では、Experiment の `TASK.md` に実行担当を `agent`、`human`、`hybrid` のいずれかで記載する。
+- ここに記載されたコマンドを実行承認とみなさない。制限対象の操作を実行する前に `AGENTS.md` と Experiment の `TASK.md` を確認する。

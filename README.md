@@ -9,11 +9,11 @@ Use it to connect research questions, hypotheses, implementation work, experimen
 | File | Purpose |
 | --- | --- |
 | [AGENTS.md](AGENTS.md) | Core instructions for AI agents |
-| [docs/WORKFLOW.md](docs/WORKFLOW.md) | How work is proposed, executed, reviewed, and handed off |
+| [docs/rex/WORKFLOW.md](docs/rex/WORKFLOW.md) | How work is proposed, executed, reviewed, and handed off |
 | [research/README.md](research/README.md) | Research goals, questions, and overall timeline |
 | [experiments/README.md](experiments/README.md) | Queue of planned, ongoing, and completed work |
 
-Templates for individual records are in [docs/templates/](docs/templates/).
+Templates for individual records are in [docs/rex/templates/](docs/rex/templates/).
 
 ## Repository layout
 
@@ -22,17 +22,21 @@ Templates for individual records are in [docs/templates/](docs/templates/).
 ├── AGENTS.md
 ├── README.md
 ├── docs/
-│   ├── WORKFLOW.md
-│   └── templates/
-│       ├── EXPERIMENT.md
-│       └── RESEARCH_QUESTION.md
+│   └── rex/
+│       ├── README.md
+│       ├── WORKFLOW.md
+│       └── templates/
+│           ├── EXPERIMENT.md
+│           ├── RESEARCH_QUESTION.md
+│           └── TASK.md
 ├── research/
 │   ├── README.md
 │   └── RQ-001_short-name.md
 ├── experiments/
 │   ├── README.md
 │   └── EXP-001_short-name/
-│       └── README.md
+│       ├── README.md
+│       └── TASK.md
 ├── third_party/
 │   └── reference_repo/           # Unmodified Git submodule
 └── workspaces/
@@ -76,4 +80,4 @@ Before making repository changes requested in chat, decide whether to create a n
 
 Each EXP identifies who will execute the work: an AI agent, a human, or both. An agent may run authorized work. Work that needs separate execution approval must wait for that approval. If execution is deferred, leave commands, expected outputs, and the current status so someone else can take over.
 
-Record observations and results in the EXP, then update the relevant research question and overall timeline when they change the research direction. See [docs/WORKFLOW.md](docs/WORKFLOW.md) for the detailed process.
+Record observations and results in the EXP, then update the relevant research question and overall timeline when they change the research direction. See [docs/rex/WORKFLOW.md](docs/rex/WORKFLOW.md) for the detailed process.
