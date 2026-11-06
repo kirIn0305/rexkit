@@ -1,7 +1,8 @@
 # EXP-XXX: 作業記録
 
 <!--
-このファイルを experiments/EXP-XXX_short-name/TASK.md にコピーする。
+このファイルを experiments/<関連 RQ または SPEC の文書名>/EXP-XXX_short-name/TASK.md にコピーする。
+関連する RQ または SPEC がない場合は experiments/general/EXP-XXX_short-name/TASK.md にコピーする。
 作業に関連するセクションだけを使用し、説明用コメントは削除する。
 未決定の項目には TBD、該当しない項目には N/A を使用する。
 実際に実行していない確認や実験を、実行済みとして記載しない。

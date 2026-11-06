@@ -2,11 +2,12 @@
 
 ステータス: planned
 種類: experiment
-関連 RQ: N/A
+関連仕様: N/A
 作成日: YYYY-MM-DD
 
 <!--
-このファイルを experiments/EXP-XXX_short-name/README.md にコピーする。
+このファイルを experiments/<関連 RQ または SPEC の文書名>/EXP-XXX_short-name/README.md にコピーする。
+関連する RQ または SPEC がない場合は experiments/general/EXP-XXX_short-name/README.md にコピーする。
 docs/rex/templates/TASK.md を同じディレクトリの TASK.md にコピーする。
 作業に関連するセクションだけを使用し、説明用コメントは削除する。
 未決定の項目には TBD、該当しない項目には N/A を使用する。

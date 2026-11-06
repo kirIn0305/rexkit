@@ -12,7 +12,7 @@ Experiment の作成は任意とする。ユーザーがすでに選択してい
 
 | 優先度 | ID | 次のアクション | 担当 | リソース | コマンドまたはリンク |
 |---:|---|---|---|---|---|
-| 1 | [EXP-001](EXP-001_short-name/README.md) | レビューして実行 | human | TBD | `bash experiments/EXP-001_short-name/run.sh` |
+| 1 | [EXP-001](RQ-001_short-name/EXP-001_short-name/README.md) | レビューして実行 | human | TBD | `bash experiments/RQ-001_short-name/EXP-001_short-name/run.sh` |
 
 <!-- このテンプレートを使用するときは例の行を削除する。 -->
 
@@ -24,7 +24,7 @@ Experiment の作成は任意とする。ユーザーがすでに選択してい
 
 ## 計画済み
 
-| 優先度 | ID | 作業 | 関連 RQ | 次のアクション |
+| 優先度 | ID | 作業 | 関連仕様 | 次のアクション |
 |---:|---|---|---|---|
 | — | — | — | — | — |
 
@@ -49,6 +49,7 @@ Experiment の作成は任意とする。ユーザーがすでに選択してい
 ## メンテナンス
 
 - Experiment を作成するときは、次の未使用 `EXP-xxx` ID を割り当てる。
+- 関連する RQ または SPEC ごとに、その文書名と同じサブディレクトリを `experiments/` 配下へ作成し、その中に Experiment を置く。関連先がない作業は `experiments/general/` に置く。
 - 各 Experiment は必ず1つのステータスセクションだけに配置する。
 - Experiment のステータスまたは次のアクションが変わったら、このページを更新する。
 - 詳細な指示、コマンド、ログは Experiment の `TASK.md` に、測定値と解釈は `README.md` に記録し、このページは簡潔に保つ。

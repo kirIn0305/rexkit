@@ -4,7 +4,7 @@
 作成日: YYYY-MM-DD
 
 <!--
-このテンプレートを research/RQ-XXX_short-name.md にコピーする。
+このテンプレートを specs/RQ-XXX_short-name.md にコピーする。
 仮説とその履歴は、読みにくくなるまではこのファイルに記録する。
 Experiment の結果を重複して記載せず、結果へのリンクを張る。
 -->
@@ -36,7 +36,7 @@ Experiment の結果を重複して記載せず、結果へのリンクを張る
 
 | Experiment | 観測 | この RQ への含意 |
 |---|---|---|
-| [EXP-XXX](../experiments/EXP-XXX_short-name/README.md) | TBD | TBD |
+| [EXP-XXX](../experiments/RQ-XXX_short-name/EXP-XXX_short-name/README.md) | TBD | TBD |
 
 <!--
 観測した内容と、その意味の解釈を分けて記述する。
@@ -74,7 +74,7 @@ Experiment の結果を重複して記載せず、結果へのリンクを張る
 
 ### YYYY-MM-DD - 解釈更新
 
-- 新しい根拠: [EXP-XXX](../experiments/EXP-XXX_short-name/README.md)
+- 新しい根拠: [EXP-XXX](../experiments/RQ-XXX_short-name/EXP-XXX_short-name/README.md)
 - 以前の解釈:
 - 更新後の解釈:
 - 変更理由:

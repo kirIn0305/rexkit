@@ -1,8 +1,8 @@
 # rexkit
 
-A lightweight repository template for research developed by humans and AI agents.
+A lightweight repository template for research and tool development by humans and AI agents.
 
-Use it to connect research questions, hypotheses, implementation work, experiments, and results. The repository is a record of decisions and observations—not a guarantee that existing code or documentation is correct.
+Use it to connect research questions, specifications, implementation work, experiments, and results. The repository is a record of decisions and observations—not a guarantee that existing code or documentation is correct.
 
 ## Start here
 
@@ -10,7 +10,7 @@ Use it to connect research questions, hypotheses, implementation work, experimen
 | --- | --- |
 | [AGENTS.md](AGENTS.md) | Core instructions for AI agents |
 | [WORKFLOW.md](WORKFLOW.md) | How work is proposed, executed, reviewed, and handed off |
-| [research/README.md](research/README.md) | Research goals, questions, and overall timeline |
+| [specs/README.md](specs/README.md) | Research Questions and tool or feature specifications |
 | [experiments/README.md](experiments/README.md) | Queue of planned, ongoing, and completed work |
 
 Templates for individual records are in [templates/](templates/).
@@ -26,15 +26,17 @@ Templates for individual records are in [templates/](templates/).
 │   └── templates/
 │       ├── EXPERIMENT.md
 │       ├── RESEARCH_QUESTION.md
+│       ├── SPECIFICATION.md
 │       └── TASK.md
-├── research/
+├── specs/
 │   ├── README.md
 │   └── RQ-001_short-name.md
 ├── experiments/
 │   ├── README.md
-│   └── EXP-001_short-name/
-│       ├── README.md
-│       └── TASK.md
+│   └── RQ-001_short-name/
+│       └── EXP-001_short-name/
+│           ├── README.md
+│           └── TASK.md
 └── third_party/
     └── target_repo/              # Git submodule
 ```
@@ -45,8 +47,8 @@ Add directories for original source code, scripts, tests, and outputs only when 
 
 1. Create a repository from this template.
 2. Add the research code you will build on as a Git submodule under `third_party/`.
-3. Describe the research goals and timeline in `research/README.md`.
-4. Create a research-question file when a question needs its own hypotheses and history.
+3. Describe Research Questions and tool or feature specifications in `specs/README.md`.
+4. Create an RQ or SPEC file when a question or specification needs its own record.
 5. Document project-specific setup and verification commands once they have been tested.
 
 After cloning a project that uses this template, initialize its submodules:
@@ -63,7 +65,7 @@ The parent repository pins each submodule to a specific commit. Update that comm
 
 If work requires modifying upstream code, document the reason in an EXP and decide whether to use an extension point, a maintained fork, or a tracked patch. Do not leave unrecorded changes inside a submodule.
 
-## Research workflow
+## Research and development workflow
 
 An EXP is a record for concrete work. It may cover an experiment, environment setup, implementation, investigation, or another task.
 
@@ -71,4 +73,4 @@ Before making repository changes requested in chat, decide whether to create a n
 
 Each EXP identifies who will execute the work: an AI agent, a human, or both. An agent may run authorized work. Work that needs separate execution approval must wait for that approval. If execution is deferred, leave commands, expected outputs, and the current status so someone else can take over.
 
-Record observations and results in the EXP, then update the relevant research question and overall timeline when they change the research direction. See [WORKFLOW.md](WORKFLOW.md) for the detailed process.
+Record observations and results in the EXP, then update the relevant RQ or SPEC when they affect its decisions or requirements. See [WORKFLOW.md](WORKFLOW.md) for the detailed process.

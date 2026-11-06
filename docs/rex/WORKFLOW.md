@@ -1,6 +1,6 @@
-# Research Workflow
+# Research and Development Workflow
 
-This document describes how humans, ChatGPT, Claude Code, GitHub Copilot, and other agents collaborate in this repository.
+This document describes how humans, ChatGPT, Claude Code, GitHub Copilot, and other agents collaborate on research and tool development in this repository.
 
 The repository is the primary record of research decisions, work, and results.
 Its contents may be incomplete or incorrect. Verify important claims against
@@ -11,8 +11,8 @@ See the root `AGENTS.md` for mandatory rules for AI agents.
 
 | Actor | Primary responsibilities |
 |---|---|
-| Human | Final research decisions, approvals, reviews, and experiment execution when appropriate |
-| ChatGPT | Research discussion, hypothesis refinement, experiment design, and result interpretation |
+| Human | Final research and development decisions, approvals, reviews, and experiment execution when appropriate |
+| ChatGPT | Research discussion, specification refinement, experiment design, and result interpretation |
 | Claude Code or another coding agent | Code investigation, implementation, testing, experiment preparation, and authorized execution |
 | GitHub Copilot | IDE-based completion, small edits, and test assistance |
 | GitHub | Version control for research records, code, Experiments, and results |
@@ -27,37 +27,39 @@ These are responsibilities, not fixed permissions. The execution owner is chosen
 | `AGENTS.md` | Mandatory rules for AI agents |
 | `docs/rex/WORKFLOW.md` | This workflow |
 | `docs/rex/templates/EXPERIMENT.md` | Template for Experiment overviews and research results |
+| `docs/rex/templates/SPECIFICATION.md` | Template for tool and feature specifications |
 | `docs/rex/templates/TASK.md` | Template for Experiment requests, work instructions, execution, and handoff records |
-| `research/README.md` | Research goals, Research Question list, and overall timeline |
-| `research/RQ-xxx.md` | Hypotheses, evidence, interpretations, and open questions for each RQ |
+| `specs/README.md` | Index of Research Questions and specifications |
+| `specs/RQ-xxx.md` | Hypotheses, evidence, interpretations, and open questions for each RQ |
+| `specs/SPEC-xxx.md` | Purpose, requirements, constraints, and design decisions for each specification |
 | `experiments/README.md` | Work index and queue of Experiments ready to run |
-| `experiments/EXP-xxx_name/README.md` | Objective, background, hypothesis, method, results, and interpretation for one Experiment |
-| `experiments/EXP-xxx_name/TASK.md` | User request, work instructions, acceptance criteria, execution, progress, validation, and handoff |
+| `experiments/<RQ-or-SPEC-id>_<short-name>/EXP-xxx_name/README.md` | Objective, background, hypothesis, method, results, and interpretation for one Experiment |
+| `experiments/<RQ-or-SPEC-id>_<short-name>/EXP-xxx_name/TASK.md` | User request, work instructions, acceptance criteria, execution, progress, validation, and handoff |
 
-Write the contents of documents under `research/` and `experiments/` in Japanese. Preserve code, commands, paths, identifiers, proper nouns, and quoted source text in their original form when translation would reduce accuracy.
+Write the contents of documents under `specs/` and `experiments/` in Japanese. Preserve code, commands, paths, identifiers, proper nouns, and quoted source text in their original form when translation would reduce accuracy.
 
 Avoid copying the same information into multiple places. Link to its source of truth instead.
 
-## 3. Research cycle
+## 3. Work cycle
 
-1. The human and ChatGPT discuss an RQ, hypotheses, and existing results.
-2. They identify uncertainties and alternative explanations.
-3. They design the next Experiment when needed.
+1. The human and ChatGPT discuss an RQ or SPEC and existing evidence or requirements.
+2. They identify uncertainties, alternatives, and constraints.
+3. They design the next Experiment when implementation or validation is needed.
 4. The human decides whether to record the work as an Experiment.
 5. The assigned actor implements or prepares the work and runs low-cost validation.
 6. An execution owner is selected for the Experiment.
 7. The work is executed and evaluated within the approved scope.
 8. Results are recorded in the Experiment.
-9. The human and ChatGPT interpret the results and update the RQ.
+9. The human and ChatGPT interpret the results and update the relevant RQ or SPEC.
 
 Research discussion alone does not automatically create files or Experiments.
 
-## 4. Discussing RQs and hypotheses
+## 4. Reviewing RQs and specifications
 
-Before discussing a specific RQ, review:
+Before discussing a specific RQ or SPEC, review:
 
-- `research/README.md`
-- The relevant `research/RQ-xxx.md`
+- `specs/README.md`
+- The relevant `specs/RQ-xxx.md` or `specs/SPEC-xxx.md`
 - `experiments/README.md`
 - Related completed Experiments
 
@@ -87,13 +89,14 @@ When the user chooses to create a new Experiment, the agent:
 
 1. Checks existing IDs in `experiments/README.md`.
 2. Reads `docs/rex/templates/EXPERIMENT.md` and `docs/rex/templates/TASK.md`.
-3. Creates `experiments/EXP-xxx_short-name/` using the next available ID.
-4. Creates its `README.md` from the Experiment template.
-5. Creates its `TASK.md` from the Task template.
-6. Preserves the original request under `ユーザーの依頼` in `TASK.md`.
-7. Links the relevant RQ, if any, from `README.md`.
-8. Adds the Experiment to `experiments/README.md`.
-9. Records a work plan in `TASK.md` before starting the work.
+3. Creates `experiments/<RQ-or-SPEC-id>_<short-name>/` using the related RQ or SPEC document name. Uses `experiments/general/` when no RQ or SPEC applies.
+4. Creates `EXP-xxx_short-name/` within that directory using the next available ID.
+5. Creates its `README.md` from the Experiment template.
+6. Creates its `TASK.md` from the Task template.
+7. Preserves the original request under `ユーザーの依頼` in `TASK.md`.
+8. Links the related RQ or SPEC from `README.md`.
+9. Adds the Experiment to `experiments/README.md`.
+10. Records a work plan in `TASK.md` before starting the work.
 
 Use `TBD` for undecided information and `N/A` for sections that do not apply. Do not invent conditions or metrics that would materially affect the result.
 
@@ -185,7 +188,7 @@ For `hybrid` execution, follow the responsibilities documented in `TASK.md`. Bot
 When an execution script is needed, make it runnable from the repository root where practical:
 
 ```bash
-bash experiments/EXP-xxx_name/run.sh
+bash experiments/<RQ-or-SPEC-id>_<short-name>/EXP-xxx_name/run.sh
 ```
 
 Add `submit.sh` when the environment requires a job scheduler.
@@ -214,7 +217,7 @@ Example prompt for ChatGPT:
 
 > Analyze this Experiment in relation to its RQ. Separate direct observations, supported and weakened hypotheses, claims that cannot yet be made, confounding factors, and candidates for the next Experiment. Present the interpretation for review before modifying files.
 
-After human review, update the Experiment and the relevant RQ. Update the timeline in `research/README.md` only if the overall research direction has changed.
+After human review, update the Experiment and the relevant RQ or SPEC.
 
 ## 14. Interruption and handoff
 

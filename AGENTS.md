@@ -18,7 +18,7 @@ Before non-trivial repository work, read:
 1. README.md
 2. docs/rex/WORKFLOW.md
 3. experiments/README.md
-4. The relevant Research Question and Experiment files
+4. The relevant RQ, SPEC, and Experiment files
 
 When creating an Experiment, also read:
 
@@ -55,11 +55,13 @@ Creating an Experiment
 When the user approves a new Experiment:
 
 1. Determine the next available Experiment ID.
-2. Create its directory and README.md from docs/rex/templates/EXPERIMENT.md.
-3. Create TASK.md in the same directory from docs/rex/templates/TASK.md.
-4. Preserve the original request under ユーザーの依頼 in TASK.md.
-5. Add the Experiment to experiments/README.md.
-6. Record the work plan in TASK.md before implementation.
+2. Create `experiments/<RQ-or-SPEC-id>_<short-name>/` using the related RQ or SPEC document name. Use `experiments/general/` when no RQ or SPEC applies.
+3. Create `EXP-xxx_short-name/` within that directory.
+4. Create its README.md from docs/rex/templates/EXPERIMENT.md.
+5. Create TASK.md in the same directory from docs/rex/templates/TASK.md.
+6. Preserve the original request under ユーザーの依頼 in TASK.md.
+7. Add the Experiment to experiments/README.md.
+8. Record the work plan in TASK.md before implementation.
 
 Do not require the user to fill in the template.
 
@@ -124,15 +126,16 @@ Approval to create an Experiment is not approval to run an expensive or external
 
 By default, prepare long-running work so a human can review and launch it.
 
-Research records
+Specification records
 
-* Write documents under research/ and experiments/ in Japanese so research discussion and records share one language.
+* Write documents under specs/ and experiments/ in Japanese so discussion and records share one language.
 * Keep code, commands, paths, identifiers, proper nouns, and quoted source text in their original form when translation would reduce accuracy.
-* Keep research questions, hypotheses, and interpretations under research/.
+* Keep Research Questions, hypotheses, and interpretations under specs/.
+* Keep tool and feature specifications under specs/.
 * Keep work instructions, configurations, execution records, and results under experiments/.
-* Link related Research Questions and Experiments.
-* Preserve failed and inconclusive work when it provides useful information.
-* Update research conclusions only from recorded evidence.
+* Link related RQs, SPECs, and Experiments.
+* Preserve failed and inconclusive work when it provides useful information for research or development decisions.
+* Update RQ interpretations and SPEC decisions only from recorded evidence.
 
 Handoff and completion
 
